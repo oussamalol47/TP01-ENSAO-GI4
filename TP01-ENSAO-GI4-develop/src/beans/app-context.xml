@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    <import resource="daoBeans.xml"></import>
+    <bean id="allocationServiceFactory" class="com.ensa.gi4.service.impl.AllocationServiceFactory"/>
+    <bean id="allocationService" factory-bean="allocationServiceFactory" factory-method="createInstance"/>
+
+    <bean id="gestionMaterielService" class="com.ensa.gi4.service.impl.GestionMaterielServiceImpl"/>
+
+    <bean id="gestionLivreService" class="com.ensa.gi4.service.impl.GestionLivreServiceImpl">
+        <property name="DAO" ref="dao" />
+    </bean>
+    <bean id="gestionChaiseService" class="com.ensa.gi4.service.impl.GestionChaiseServiceImpl">
+        <property name="DAO" ref="dao" />
+    </bean>
+
+    <bean id="Controller" class="com.ensa.gi4.controller.Controller">
+        <property name="GestionMaterielController" ref="gestionMaterielController"/>
+        <property name="LivreMaterielController" ref="gestionLivreController"/>
+        <property name="GestionChaiseController" ref="gestionChaiseController"/>
+        <property name="AllocationController" ref="allocationController"/>
+    </bean>
+    <bean id="gestionMaterielController" class="com.ensa.gi4.controller.GestionMaterielController">
+        <property name="gestionMaterielService" ref="gestionMaterielService"/>
+    </bean>
+    <bean id="gestionLivreController" class="com.ensa.gi4.controller.GestionLivreController">
+        <property name="gestionLivreService" ref="gestionLivreService"/>
+    </bean>
+    <bean id="gestionChaiseController" class="com.ensa.gi4.controller.GestionChaiseController">
+        <property name="gestionChaiseService" ref="gestionChaiseService"/>
+    </bean>
+    <bean id="allocationController" class="com.ensa.gi4.controller.AllocationController">
+        <property name="allocationService" ref="allocationService"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TP01-ENSAO-GI4-develop/libs/spring-expression-4.2.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TP01-ENSAO-GI4-develop/libs/spring-context-4.2.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TP01-ENSAO-GI4-develop/libs/spring-core-4.2.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TP01-ENSAO-GI4-develop/libs/spring-beans-4.2.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TP01-ENSAO-GI4-develop/libs/commons-logging-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
