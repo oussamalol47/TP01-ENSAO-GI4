@@ -2,7 +2,9 @@ package com.ensa.gi4.service.impl;
 
 import com.ensa.gi4.modele.Materiel;
 import com.ensa.gi4.service.api.AllocationService;
+import org.springframework.stereotype.Component;
 
+@Component("allocation")
 public class AllocationServiceImpl implements AllocationService {
     @Override
     public void allouer(Float n) {

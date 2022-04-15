@@ -1,9 +1,12 @@
 package com.ensa.gi4.controller;
 
 import com.ensa.gi4.service.api.GestionMaterielService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
-
+@Component("materielcont")
 public class GestionMaterielController implements MaterielController {
 
     private GestionMaterielService gestionMaterielService;
@@ -34,6 +37,8 @@ public class GestionMaterielController implements MaterielController {
         System.exit(0);
     }
 
+    @Autowired
+    @Qualifier("materiel")
     public void setGestionMaterielService(GestionMaterielService gestionMaterielService) {
         // injection par accesseur
         this.gestionMaterielService = gestionMaterielService;

@@ -1,16 +1,28 @@
 package com.ensa.gi4.controller;
 
-import java.util.Scanner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
+import java.util.Scanner;
+@Component
 public class Controller {
     MaterielController materiel;
     MaterielController livre;
     MaterielController chaise;
     AllocationController allocation;
+    @Autowired
+    @Qualifier("materielcont")
     public void setGestionMaterielController(MaterielController materiel){this.materiel=materiel;}
+    @Autowired
+    @Qualifier("livrecont")
     public void setLivreMaterielController(MaterielController livre){this.livre=livre;}
+    @Autowired
+    @Qualifier("chaisecont")
     public void setGestionChaiseController(MaterielController chaise){this.chaise=chaise;}
-
+@Autowired
+@Qualifier("allocationcont")
     public void setAllocationController(AllocationController allocation){this.allocation=allocation;}
     public void affichermenu(){
 

@@ -2,9 +2,12 @@ package com.ensa.gi4.controller;
 
 import com.ensa.gi4.service.api.GestionChaiseService;
 import com.ensa.gi4.service.api.GestionLivreService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
-
+@Component("chaisecont")
 public class GestionChaiseController implements MaterielController {
 
     private GestionChaiseService gestionChaiseService;
@@ -40,6 +43,8 @@ public class GestionChaiseController implements MaterielController {
     }
 
 
+    @Autowired
+    @Qualifier("chaise")
     public void setGestionChaiseService(GestionChaiseService gestionChaiseService) {
         // injection par accesseur
         this.gestionChaiseService = gestionChaiseService;

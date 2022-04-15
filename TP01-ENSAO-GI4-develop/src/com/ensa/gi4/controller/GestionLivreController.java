@@ -1,9 +1,12 @@
 package com.ensa.gi4.controller;
 
 import com.ensa.gi4.service.api.GestionLivreService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
-
+@Component("livrecont")
 public class GestionLivreController implements MaterielController {
 
     private GestionLivreService gestionLivreService;
@@ -37,7 +40,8 @@ public class GestionLivreController implements MaterielController {
         System.exit(0);
     }
 
-
+    @Autowired
+    @Qualifier("livre")
     public void setGestionLivreService(GestionLivreService gestionLivreService) {
         // injection par accesseur
         this.gestionLivreService = gestionLivreService;

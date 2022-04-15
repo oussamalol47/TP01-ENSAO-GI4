@@ -3,11 +3,14 @@ package com.ensa.gi4.controller;
 import com.ensa.gi4.service.api.AllocationService;
 import com.ensa.gi4.service.impl.AllocationServiceImpl;
 import com.ensa.gi4.service.impl.GestionMaterielServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
-
+@Component("allocationcont")
 public class AllocationController implements MaterielController {
-public AllocationService allocationService;
+    public AllocationService allocationService;
 
 public void Allocation(){
    try {
@@ -35,7 +38,8 @@ public void Allocation(){
     }
 
 
-
+    @Autowired
+    @Qualifier("allocation")
     public void setAllocationService(AllocationServiceImpl allocationService) {
     this.allocationService=allocationService;
     }

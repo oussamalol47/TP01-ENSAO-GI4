@@ -2,10 +2,11 @@ package com.ensa.gi4.DAO;
 
 import com.ensa.gi4.modele.Chaise;
 import com.ensa.gi4.modele.Livre;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class DAOImpl implements DAO{
     List<Livre> livres = new ArrayList<Livre>();
     List<Chaise> chaises = new ArrayList<Chaise>();
